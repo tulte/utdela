@@ -1,21 +1,27 @@
-<form method="POST" action="/auth/login">
-    {!! csrf_field() !!}
+@extends('layouts.clean')
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+@section('title', 'Login')
+@section('content')
+        @if (Session::has('message'))
+            <div class="alert alert-warning">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+        @endif
+      <form class="form-signin" method="POST" action="/login">
+        {!! csrf_field() !!}
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="remember"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      </form>
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
 
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
-    </div>
 
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+@endsection

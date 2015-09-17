@@ -18,5 +18,13 @@ Route::post('login', 'LoginController@login');
 Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 
 
-Route::get('/',['middleware' => 'auth','uses' => 'UploadController@index']);
-Route::get('upload',['middleware' => 'auth','uses' => 'UploadController@index']);
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('user',['as' => 'user.index', 'uses'=>'UserController@index']);
+    Route::get('user/edit/{id}',['as' => 'user.edit', 'uses'=>'UserController@edit']);
+    Route::get('user/create',['as' => 'user.create', 'uses'=>'UserController@create']);
+    Route::post('user/save',['as' => 'user.save', 'uses'=>'UserController@save']);
+    Route::post('user/update/{id}',['as' => 'user.update', 'uses'=>'UserController@update']);
+
+    Route::get('/','UploadController@index');
+    Route::get('upload',['as' => 'upload.index', 'uses'=>'UploadController@index']);
+});

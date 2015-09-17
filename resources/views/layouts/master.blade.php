@@ -3,7 +3,9 @@
         <title>Utdela - @yield('title')</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
         <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
     </head>
     <body>
@@ -21,8 +23,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#">Benutzer</a></li>
-                <li><a href="#about">Hochladen</a></li>
+                <li><a href="{{route('user.index')}}">Benutzer</a></li>
+                <li><a href="{{route('upload.index')}}">Hochladen</a></li>
                 <!--
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -45,7 +47,7 @@
           </div>
         </nav>
 
-        <div class="container" style="margin-top:40px;" role="main">
+        <div class="container" style="margin-top:80px;" role="main">
             @yield('content')
         </div>
     </body>

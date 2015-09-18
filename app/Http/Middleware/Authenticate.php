@@ -32,9 +32,9 @@ class Authenticate
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $group)
     {
-        if ($this->auth->guest()) {
+        if ($this->auth->guest() && !$this->checkGroup()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
@@ -43,5 +43,13 @@ class Authenticate
         }
 
         return $next($request);
+    }
+
+    private function checkGroup($group) {
+        $user = $auth->user();
+        if($group == "admin" && $user->role->name != "admin") {
+            return false;
+        }
+        return true;
     }
 }

@@ -3,6 +3,5 @@
 @section('title', 'Hochladen')
 @section('content')
 
-Upload
 
 @endsection

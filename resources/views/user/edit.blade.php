@@ -31,6 +31,10 @@
         <label for="password">Passwort wiederholen</label>
         {!! Form::text('password_confirmation', null, ['class' => 'form-control', 'placeholder' => 'Password']) !!}
     </div>
+    <div class="form-group">
+        <label for="group">Gruppe</label>
+        {!! Form::select('group', $groups, isset($user->group_id) ? $user->group_id : null, ['class' => 'form-control', 'placeholder' => 'Gruppe']) !!}
+    </div>
     <button type="submit" class="btn btn-default">Speichern</button>
     <a href="{{route('user.index')}}" class="btn btn-default">Abbrechen</a>
 </form>

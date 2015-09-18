@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 use App\User;
+use App\UserGroup;
 
 class UserController extends Controller {
 
@@ -16,8 +17,9 @@ class UserController extends Controller {
 
     public function edit($id) {
         $user = User::find($id);
+        $groups = UserGroup::getListIdName();
         if($user) {
-            return view('user.edit', ['user' => $user]);
+            return view('user.edit', ['user' => $user,'groups' => $groups]);
         }
         return redirect()->back();
     }
@@ -28,6 +30,7 @@ class UserController extends Controller {
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:user' . ($id > 0 ? ',email,' . $id : ''),
             'password' => ($password_required ? 'required|confirmed|min:6' : ''),
+            'group'     => 'required|numeric'
         ];
 
         return Validator::make($data, $validator);
@@ -35,6 +38,10 @@ class UserController extends Controller {
 
     public function create() {
          return view('user.edit');
+    }
+
+    public function files() {
+        return view('user.files');
     }
 
     public function save(Request $request) {
@@ -70,6 +77,7 @@ class UserController extends Controller {
     private function saveUser($user, $request) {
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->group_id = $request->group;
         if($request->password) {
             $user->password =  bcrypt($request->password);
         }

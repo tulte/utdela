@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Hochladen')
+@section('title', 'Dateien')
 @section('content')
 
-Upload
+Files
 
 @endsection

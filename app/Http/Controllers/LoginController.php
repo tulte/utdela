@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 use Auth;
 use Hash;
 use Session;
@@ -19,7 +20,11 @@ class LoginController extends Controller
         $credentials = ['email' => $request->input('email'), 'password' => $request->input('password')];
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('upload.index');
+            $user = User::getByEmail($request->input('email'));
+            if($user->group->name == 'admin') {
+                return redirect()->intended('upload');
+            }
+            return redirect()->intended('user/files');
         }
         return redirect('login')->with('message', 'Login Failed');
     }

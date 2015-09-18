@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'group_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,21 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    public static function getByEmail($email) {
+        return User::where('email', $email)->first();
+    }
+
+    /**
+     * Get the UserGroup
+     *
+     */
+    public function group() {
+        return $this->belongsTo('App\UserGroup','group_id');
+    }
+
+    public function isAdmin() {
+        return $this->group->name == 'admin';
+    }
 }

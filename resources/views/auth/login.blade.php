@@ -9,7 +9,6 @@
         @endif
       <form class="form-signin" method="POST" action="/login">
         {!! csrf_field() !!}
-        <h2 class="form-signin-heading">Login</h2>
         <label for="email" class="sr-only">Email address</label>
         <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
         <label for="password" class="sr-only">Password</label>

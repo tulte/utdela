@@ -16,7 +16,7 @@ $(function() {
 
 </script>
 
-<a href="{{route('user.create')}}" class="btn btn-default">Neu</a>
+<a href="{{route('user.create')}}" class="btn btn-default glyphicon glyphicon-plus"></a>
 
 <table id="user-table" class="display" cellspacing="0">
     <thead>
@@ -33,7 +33,10 @@ $(function() {
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->created_at}}</td>
-                <td><a href="{{route('user.edit', [$user->id])}}" class="btn btn-default">Edit</a></td>
+                <td style="text-align: right;">
+                    <a href="{{route('user.edit', [$user->id])}}" class="btn btn-default glyphicon glyphicon-pencil"></a>
+                    <a href="{{route('user.files', [$user->id])}}" class="btn btn-default glyphicon glyphicon-file"></a>
+                </td>
             </tr>
         @endforeach
     </tbody>

@@ -53,4 +53,14 @@ class User extends Model implements AuthenticatableContract,
     public function isAdmin() {
         return $this->group->name == 'admin';
     }
+
+
+    public static function getListIdName() {
+        $ret = [];
+        $users = self::all();
+        foreach ($users as $user) {
+            $ret[$user->id] = $user->name;
+        }
+        return $ret;
+    }
 }

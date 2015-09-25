@@ -35,7 +35,7 @@
         <label for="group">Gruppe</label>
         {!! Form::select('group', $groups, isset($user->group_id) ? $user->group_id : null, ['class' => 'form-control', 'placeholder' => 'Gruppe']) !!}
     </div>
-    <button type="submit" class="btn btn-default">Speichern</button>
+    <button type="submit" class="btn btn-primary">Speichern</button>
     <a href="{{route('user.index')}}" class="btn btn-default">Abbrechen</a>
 </form>
 

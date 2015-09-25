@@ -12,12 +12,12 @@
 */
 
 Route::get('/',function() {
-    view('start');
+    return view('start');
 });
 
 
 // Authentication routes...
-Route::get('login', 'LoginController@index');
+Route::get('login', ['as' => 'login.index', 'uses' => 'LoginController@index']);
 Route::post('login', 'LoginController@login');
 Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 
@@ -30,9 +30,10 @@ Route::group(['middleware'=>'auth:admin'],function(){
     Route::post('user/update/{id}',['as' => 'user.update', 'uses'=>'UserController@update']);
 
     Route::get('upload',['as' => 'upload.index', 'uses'=>'UploadController@index']);
+    Route::post('upload',['as' => 'upload.upload', 'uses'=>'UploadController@upload']);
 });
 
 
 Route::group(['middleware'=>'auth:reader'],function(){
-    Route::get('user/files',['as' => 'user.files', 'uses'=>'UserController@files']);
+    Route::get('user/files/{id}',['as' => 'user.files', 'uses'=>'UserController@files']);
 });

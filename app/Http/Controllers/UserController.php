@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\User;
 use App\UserGroup;
+use App\UserFile;
 
 class UserController extends Controller {
 
@@ -40,9 +41,6 @@ class UserController extends Controller {
          return view('user.edit');
     }
 
-    public function files() {
-        return view('user.files');
-    }
 
     public function save(Request $request) {
         $validator = $this->validator($request->all());
@@ -62,7 +60,7 @@ class UserController extends Controller {
         $validator = $this->validator($request->all(), $id, $password_required);
 
         if($user === null) {
-            return redirect()->back()->withInput()->withErrors(['error' => ['User not exists']]);
+            return redirect()->back()->withInput()->withErrors(['error' => ['Benutzer existiert nicht']]);
         }
 
         if($validator->fails()) {
@@ -72,6 +70,11 @@ class UserController extends Controller {
         $this->saveUser($user,$request);
         return redirect()->route('user.index');
 
+    }
+
+    public function files($id) {
+        $files = UserFile::getFilesForUser($id);
+        return view('user.files',array('files' => $files));
     }
 
     private function saveUser($user, $request) {

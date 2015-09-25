@@ -34,7 +34,7 @@ class Authenticate
      */
     public function handle($request, Closure $next, $group)
     {
-        if ($this->auth->guest() && !$this->checkGroup()) {
+        if ($this->auth->guest() || !$this->checkGroup($group)) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
@@ -46,8 +46,8 @@ class Authenticate
     }
 
     private function checkGroup($group) {
-        $user = $auth->user();
-        if($group == "admin" && $user->role->name != "admin") {
+        $user = $this->auth->user();
+        if($group == "admin" && $user->group->name != "admin") {
             return false;
         }
         return true;

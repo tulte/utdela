@@ -36,10 +36,16 @@
               <a class="navbar-brand" href="{{url('/')}}">Utdela</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+              @if (Auth::user()->group->name == 'admin')
               <ul class="nav navbar-nav">
                 <li><a href="{{route('upload.index')}}">Hochladen</a></li>
                 <li><a href="{{route('user.index')}}">Benutzer</a></li>
               </ul>
+              @else
+              <ul class="nav navbar-nav">
+                <li><a href="{{route('user.files',['id' => Auth::user()->id])}}">Dateien</a></li>
+              </ul>
+              @endif
                <ul class="nav navbar-nav navbar-right">
                 <li class="pull-right"><a href="{{route('logout')}}">Logout</a></li>
                 </ul>

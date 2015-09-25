@@ -38,7 +38,8 @@ class UserController extends Controller {
     }
 
     public function create() {
-         return view('user.edit');
+        $groups = UserGroup::getListIdName();
+         return view('user.edit', ['groups' => $groups]);
     }
 
 

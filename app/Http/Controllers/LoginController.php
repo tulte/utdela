@@ -24,7 +24,7 @@ class LoginController extends Controller
             if($user->group->name == 'admin') {
                 return redirect()->intended('upload');
             }
-            return redirect()->intended('user/files');
+            return redirect()->intended('user/files/' . $user->id);
         }
         return redirect('login')->with('message', 'Login Failed');
     }

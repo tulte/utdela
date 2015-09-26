@@ -87,4 +87,16 @@ class UserController extends Controller {
         }
         $user->save();
     }
+
+    public function download($id) {
+        $userfile = UserFile::find($id);
+        if(!is_null($userfile)) {
+            $file = config('upload.destination') . '/' . $userfile->user_id . '/' . $userfile->file;
+            if(file_exists($file)) {
+                return response()->download($file, $userfile->name);
+            }
+        }
+        return redirect()->back();
+
+    }
 }

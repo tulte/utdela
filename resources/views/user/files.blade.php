@@ -30,7 +30,7 @@ $(function() {
             <tr>
                 <td>{{$file->name}}</td>
                 <td>{{$file->created_at}}</td>
-                <td style="text-align: right;"><a href="#" class="btn btn-default glyphicon glyphicon-download-alt"></a></td>
+                <td style="text-align: right;"><a href="{{route('user.download', ['id' => $file->id])}}" class="btn btn-default glyphicon glyphicon-download-alt"></a></td>
             </tr>
         @endforeach
     </tbody>

@@ -36,4 +36,5 @@ Route::group(['middleware'=>'auth:admin'],function(){
 
 Route::group(['middleware'=>'auth:reader'],function(){
     Route::get('user/files/{id}',['as' => 'user.files', 'uses'=>'UserController@files']);
+    Route::get('user/download/{id}',['as' => 'user.download', 'uses'=>'UserController@download']);
 });

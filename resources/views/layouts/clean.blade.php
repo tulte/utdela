@@ -8,8 +8,8 @@
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -19,7 +19,7 @@
           </div>
         </nav>
 
-        <div class="container" style="margin-top:80px;">
+        <div class="container">
             @yield('content')
         </div>
     </body>

@@ -51,7 +51,7 @@ class UploadController extends Controller
 
     private function checkExtension($file) {
         if(!is_null($file)) {
-            $extension = $file->getClientOriginalExtension();
+            $extension = strtolower($file->getClientOriginalExtension());
             return in_array($extension,config('upload.extensions'));
         }
         return false;

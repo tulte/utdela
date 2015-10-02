@@ -35,6 +35,7 @@ $(function() {
                 <td>{{$user->created_at}}</td>
                 <td style="text-align: right;">
                     <a href="{{route('user.edit', [$user->id])}}" class="btn btn-default glyphicon glyphicon-pencil"></a>
+                    <a href="{{route('user.destroy', [$user->id])}}" class="btn btn-default glyphicon glyphicon-remove"></a>
                     <a href="{{route('user.files', [$user->id])}}" class="btn btn-default glyphicon glyphicon-file"></a>
                 </td>
             </tr>

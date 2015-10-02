@@ -8,6 +8,8 @@ use Validator;
 use App\User;
 use App\UserGroup;
 use App\UserFile;
+use App\Events\UserCreated;
+use Event;
 
 class UserController extends Controller {
 
@@ -39,7 +41,7 @@ class UserController extends Controller {
 
     public function create() {
         $groups = UserGroup::getListIdName();
-         return view('user.edit', ['groups' => $groups]);
+        return view('user.edit', ['groups' => $groups]);
     }
 
 
@@ -51,6 +53,8 @@ class UserController extends Controller {
 
         $user = new User();
         $this->saveUser($user,$request);
+
+        Event::fire(new UserCreated($request));
         return redirect()->route('user.index');
 
     }
@@ -71,6 +75,12 @@ class UserController extends Controller {
         $this->saveUser($user,$request);
         return redirect()->route('user.index');
 
+    }
+
+    public function destroy($id)
+    {
+        User::find($id)->delete();
+        return redirect()->route('user.index');
     }
 
     public function files($id) {

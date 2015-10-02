@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\UserFile;
 use Input;
+use Event;
+use App\Events\FileUploaded;
 
 class UploadController extends Controller
 {
@@ -41,6 +43,8 @@ class UploadController extends Controller
             $userfile->name = $file->getClientOriginalName();
             $userfile->file = $file->getFilename();
             $userfile->save();
+
+            Event::fire(new FileUploaded($user,$userfile));
 
         } else {
             $result = ['errors','Fehler beim hochladen'];

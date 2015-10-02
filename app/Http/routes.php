@@ -25,6 +25,7 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 Route::group(['middleware'=>'auth:admin'],function(){
     Route::get('user',['as' => 'user.index', 'uses'=>'UserController@index']);
     Route::get('user/edit/{id}',['as' => 'user.edit', 'uses'=>'UserController@edit']);
+    Route::get('user/destroy/{id}',['as' => 'user.destroy', 'uses'=>'UserController@destroy']);
     Route::get('user/create',['as' => 'user.create', 'uses'=>'UserController@create']);
     Route::post('user/save',['as' => 'user.save', 'uses'=>'UserController@save']);
     Route::post('user/update/{id}',['as' => 'user.update', 'uses'=>'UserController@update']);

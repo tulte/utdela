@@ -1,0 +1,437 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"action",
+				"actionstats"
+			],
+			[
+				"option",
+				"option_type"
+			],
+			[
+				"fi",
+				"first_key"
+			],
+			[
+				"s",
+				"get_aggregated_stats〔function〕"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 310.0,
+		"last_filter": "gitk",
+		"selected_items":
+		[
+			[
+				"gitk",
+				"Git: Gitk"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Gitk"
+			],
+			[
+				"git d",
+				"Git: Diff Current File"
+			],
+			[
+				"git ad",
+				"Git: Add Current File"
+			],
+			[
+				"Package Control: S",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 402.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Z/generaltracking/www/config/config.inc.php",
+		"/Z/generaltracking/www/config/local.inc.php",
+		"/Z/generaltracking/www/modules/main/stats_sites_days.class.php",
+		"/C/Users/tobias.mueller/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/Z/generaltracking/www/htdocs/files/give_gif.php",
+		"/Y/bi_adwords/www/bootstrap/start.php",
+		"/Y/bi_adwords/www/app/config/database.php",
+		"/Z/generaltracking/www/bin/sync_local_db.sh",
+		"/Z/generaltracking/www/includes/classes/views/domain_view.class.php",
+		"/Z/generaltracking/www/includes/classes/parse_logs.class.php",
+		"/Z/generaltracking/www/templates/main/stats_sites.tpl",
+		"/C/Users/tobias.mueller/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Z/generaltracking/www/modules/main/stats_sites_years.class.php",
+		"/Z/generaltracking/www/modules/main/stats_sites_months.class.php",
+		"/Z/generaltracking/www/modules/main/stats_sites_hours.class.php",
+		"/Z/generaltracking/www/bin/parselog.php",
+		"/Z/generaltracking/www/includes/classes/chart_data.class.php",
+		"/Z/generaltracking/www/templates/main/stats_domains.tpl",
+		"/Z/generaltracking/.gitignore",
+		"/Z/generaltracking/www/includes/funcs.inc.php",
+		"/Z/generaltracking/www/modules/main/stats_domains_days.class.php",
+		"/Z/generaltracking/www/modules/main/stats_returningvisitors_days.class.php",
+		"/Z/generaltracking/www/modules/main/stats_domains_months.class.php",
+		"/Z/generaltracking/www/includes/framework/functions.inc.php",
+		"/Z/generaltracking/www/includes/classes/views/year_view.class.php",
+		"/Z/generaltracking/www/templates/main/stats_returningvisitors_days.tpl",
+		"/Z/generaltracking/www/templates/main/stats_pathtrace.tpl",
+		"/Z/generaltracking/www/modules/main/stats_pathtrace.class.php",
+		"/Z/generaltracking/www/includes/classes/chart_returningvisitors.class.php",
+		"/Z/generaltracking/www/templates/main/stats_returningvisitors.tpl",
+		"/Z/generaltracking/www/modules/main/stats_returningvisitors_months.class.php",
+		"/Z/generaltracking/www/includes/classes/distributed_db.class.php",
+		"/Z/generaltracking/www/includes/classes/views/returningvisitor_view.class.php",
+		"/Z/generaltracking/www/modules/main/stats_keywords_days.class.php",
+		"/Z/generaltracking/www/modules/main/stats_keywords_months.class.php",
+		"/Z/generaltracking/www/modules/main/stats_keywords_years.class.php",
+		"/Z/generaltracking/www/templates/main/stats_keywords.tpl",
+		"/Z/generaltracking/www/modules/main/stats_exitpages.class.php",
+		"/Z/generaltracking/www/modules/main/stats_browser_months.class.php",
+		"/Z/generaltracking/www/templates/main/stats_returningvisitors_months.tpl",
+		"/Z/generaltracking/www/modules/main/stats_browser_years.class.php",
+		"/Z/generaltracking/www/includes/classes/chart_browser_month.class.php",
+		"/Z/generaltracking/www/includes/validation/browser_select.class.php",
+		"/Z/generaltracking/www/includes/classes/views/browser_view.class.php",
+		"/Z/generaltracking/www/includes/classes/chart_domains.class.php",
+		"/C/Users/tobias.mueller/Desktop/dummy.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"order_group",
+			",\n",
+			"bi-adwords",
+			"groupstats_dbhost",
+			"visito",
+			"actionst",
+			"country",
+			"$country",
+			"action_stats_s",
+			"actions",
+			"bar",
+			"country",
+			"$country",
+			"print",
+			"fusionchart",
+			"chart",
+			"chart_returningvisitors",
+			"chart_pathtrace1",
+			"chart_keywords",
+			"chart_domains",
+			"chart",
+			"chart_keywords",
+			"chart",
+			"chart_ty",
+			"chart_returningvisitors",
+			"chart_export",
+			"chart_exitpages",
+			"chart_browser_year",
+			"chart",
+			"fusionchart"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 114.0
+	},
+	"output.xdebug":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"stats_quickhour",
+				"www\\modules\\main\\stats_quickhour.class.php"
+			],
+			[
+				"siteday",
+				"www\\modules\\main\\stats_sites_days.class.php"
+			],
+			[
+				"give",
+				"www\\htdocs\\files\\give_gif.php"
+			],
+			[
+				"parse",
+				"www\\includes\\classes\\parse_logs.class.php"
+			],
+			[
+				"stats_",
+				"www\\templates\\main\\stats_sites.tpl"
+			],
+			[
+				"viewdomai",
+				"www\\includes\\classes\\views\\domain_view.class.php"
+			],
+			[
+				"parse_",
+				"www\\includes\\classes\\parse_logs.class.php"
+			],
+			[
+				"stats_site_h",
+				"www\\modules\\main\\stats_sites_hours.class.php"
+			],
+			[
+				"stats_sitemo",
+				"www\\modules\\main\\stats_sites_months.class.php"
+			],
+			[
+				"stats_site",
+				"www\\modules\\main\\stats_sites_years.class.php"
+			],
+			[
+				"stats_dom",
+				"www\\templates\\main\\stats_domains.tpl"
+			],
+			[
+				"stats_s",
+				"www\\templates\\main\\stats_sites.tpl"
+			],
+			[
+				"statsyear",
+				"www\\modules\\main\\stats_sites_years.class.php"
+			],
+			[
+				"viewyear",
+				"www\\includes\\classes\\views\\year_view.class.php"
+			],
+			[
+				"return",
+				"www\\modules\\main\\stats_returningvisitors_days.class.php"
+			],
+			[
+				"domai",
+				"www\\modules\\main\\stats_domains_months.class.php"
+			],
+			[
+				"domains",
+				"www\\modules\\main\\stats_domains_days.class.php"
+			],
+			[
+				"domain_v",
+				"www\\includes\\classes\\views\\domain_view.class.php"
+			],
+			[
+				"functions.i",
+				"www\\includes\\framework\\functions.inc.php"
+			],
+			[
+				"path",
+				"www\\templates\\main\\stats_pathtrace.tpl"
+			],
+			[
+				"returning",
+				"www\\includes\\classes\\views\\returningvisitor_view.class.php"
+			],
+			[
+				"distr",
+				"www\\includes\\classes\\distributed_db.class.php"
+			],
+			[
+				"returni",
+				"www\\templates\\main\\stats_returningvisitors_months.tpl"
+			],
+			[
+				"stats_ke",
+				"www\\templates\\main\\stats_keywords.tpl"
+			],
+			[
+				"stats_si",
+				"www\\templates\\main\\stats_sites.tpl"
+			],
+			[
+				"browser",
+				"www\\modules\\main\\stats_browser_years.class.php"
+			],
+			[
+				"chart_bro",
+				"www\\includes\\classes\\chart_browser_month.class.php"
+			],
+			[
+				"chart_",
+				"www\\includes\\classes\\chart_data.class.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"char",
+				"chart_data"
+			]
+		],
+		"width": 866.0
+	},
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"40":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"61":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"68":
+				{
+					"group": 0,
+					"index": 2
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 331.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -7,6 +7,7 @@ use App\User;
 use App\UserFile;
 use Input;
 use Event;
+use Crypt;
 use App\Events\FileUploaded;
 
 class UploadController extends Controller
@@ -32,10 +33,12 @@ class UploadController extends Controller
         }
 
         $destination = config('upload.destination') . '/' . $user_id;
-        $this->makeDir($destination);
 
+        $this->makeDir($destination);
         $uploadResult = $file->move($destination);
+
         if($uploadResult) {
+            $this->encryptFile($destination . '/' . $file->getFilename());
             $result = ['infos','Datei hochgeladen'];
             //create user file entry
             $userfile = new UserFile();
@@ -64,6 +67,13 @@ class UploadController extends Controller
     private function makeDir($path)
     {
          return is_dir($path) || mkdir($path);
+    }
+
+    private function encryptFile($file) {
+        if(file_exists($file)) {
+            $content = file_get_contents($file);
+            file_put_contents($file,Crypt::encrypt($content));
+        }
     }
 
 }

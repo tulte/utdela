@@ -78,6 +78,11 @@
 	},
 	"file_history":
 	[
+		"/W/utdela/utdela.sublime-project",
+		"/W/utdela/app/Http/Controllers/UserController.php",
+		"/W/utdela/app/Http/Controllers/LoginController.php",
+		"/W/utdela/.gitignore",
+		"/W/utdela/public/info.php",
 		"/Z/generaltracking/www/config/config.inc.php",
 		"/Z/generaltracking/www/config/local.inc.php",
 		"/Z/generaltracking/www/modules/main/stats_sites_days.class.php",
@@ -142,6 +147,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Utd",
 			"order_group",
 			",\n",
 			"bi-adwords",
@@ -385,20 +391,10 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"40":
-				{
-					"group": 0,
-					"index": 1
-				},
-				"61":
+				"24":
 				{
 					"group": 0,
 					"index": 0
-				},
-				"68":
-				{
-					"group": 0,
-					"index": 2
 				}
 			},
 			"restore_layout":

@@ -10,6 +10,7 @@ use App\UserGroup;
 use App\UserFile;
 use App\Events\UserCreated;
 use Event;
+use Crypt;
 
 class UserController extends Controller {
 
@@ -99,14 +100,36 @@ class UserController extends Controller {
     }
 
     public function download($id) {
-        $userfile = UserFile::find($id);
-        if(!is_null($userfile)) {
-            $file = config('upload.destination') . '/' . $userfile->user_id . '/' . $userfile->file;
-            if(file_exists($file)) {
-                return response()->download($file, $userfile->name);
+        $tmpfile = null;
+        try
+        {
+            $userfile = UserFile::find($id);
+            if(!is_null($userfile)) {
+                $path = config('upload.destination') . '/' . $userfile->user_id;
+                $file = $path . '/' . $userfile->file;
+                if(file_exists($file)) {
+                    //create temp file and delete them after download
+                    $tmpfile = $this->createTmpDownload($path,$file);
+                    $response = response()->download($tmpfile, $userfile->name);
+                    return $response;
+                }
             }
+            return redirect()->back();
+        } catch (Exception $ex) {
+            $this->deleteTmpFile($tmpfile);
+            Log::error($ex->getMessage());
         }
-        return redirect()->back();
+    }
 
+    private function createTmpDownload($path, $file) {
+        $tmpfname = tempnam($path, "tmp");
+        file_put_contents($tmpfname, Crypt::decrypt(file_get_contents($file)));
+        return $tmpfname;
+    }
+
+    private function deleteTmpFile($tmpfile) {
+        if(!is_null($tmpfile)) {
+                @unlink($tmpfile);
+        }
     }
 }

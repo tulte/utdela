@@ -94,6 +94,10 @@ class UserController extends Controller {
         $user->email = $request->email;
         $user->group_id = $request->group;
         if($request->password) {
+            //fire event on password change
+            if($user->password != bcrypt($request->password)) {
+                Event::fire(new UserCreated($request));
+            }
             $user->password =  bcrypt($request->password);
         }
         $user->save();
